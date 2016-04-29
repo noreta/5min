@@ -13,7 +13,6 @@ I'm committing to blogging everyday for the indefinite future, to help with deve
 > -- Theodore Roosevelt
 
 
-
 ### Today's goal 
 
 Write a function that calculates the greatest common denominator with Haskell: 
