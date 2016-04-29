@@ -7,6 +7,9 @@ description: ""
 # Your name. Will show in your footer + sidebar
 author: "Kat Chuang"
 
+url: "http://katychuang.com/"
+baseurl: "/5min"
+
 # Exclude these files from your production _site
 exclude: [Gemfile, Gemfile.lock, CNAME, Readme.md]
 
