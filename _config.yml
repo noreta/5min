@@ -1,0 +1,41 @@
+# Title of your blog; shows in the header
+name: "5 min"
+
+# Description of your content (will only be used on Google Search)
+description: ""
+
+# Your name. Will show in your footer + sidebar
+author: "Kat Chuang"
+
+# Exclude these files from your production _site
+exclude: [Gemfile, Gemfile.lock, CNAME, Readme.md]
+
+# A short presentation of yourself. Will show in the sidebar, under your name. Best usage would be between 30 to 50 words.
+author-bio: "Product designer & front end developer. Teaching others to code with #DataMascara #SneakerAnalytics #StyleForEngineers"
+
+# Social Accounts (mine, as placeholders)
+
+twitter: katychuang
+github: katychuang
+dribbble: katychuang
+instagram: katychuang.nyc
+
+# Google Analytics (you may want to changes these with yours or even delete :)
+
+# ga_domain: m3xm.github.io
+# ga_tracking_id: 
+
+# Other (refer to http://jekyllrb.com/docs/home/ for further details on the below)
+
+markdown: kramdown
+permalink: pretty
+highlighter: pygments
+
+paginate: 10
+paginate_path: "/page/:num"
+
+# SCSS
+
+sass:
+  sass_dir: _scss
+  style: :compressed
