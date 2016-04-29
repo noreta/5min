@@ -1,8 +1,8 @@
 # Title of your blog; shows in the header
-name: "5 min"
+name: "Tangible bits"
 
 # Description of your content (will only be used on Google Search)
-description: ""
+description: "Small bits of learning"
 
 # Your name. Will show in your footer + sidebar
 author: "Kat Chuang"
@@ -14,7 +14,7 @@ baseurl: "/5min"
 exclude: [Gemfile, Gemfile.lock, CNAME, Readme.md]
 
 # A short presentation of yourself. Will show in the sidebar, under your name. Best usage would be between 30 to 50 words.
-author-bio: "Product designer & front end developer. Teaching others to code with #DataMascara #SneakerAnalytics #StyleForEngineers"
+author-bio: "Product designer & front end developer. Learning to code in Haskell."
 
 # Social Accounts (mine, as placeholders)
 
