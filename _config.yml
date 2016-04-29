@@ -25,8 +25,8 @@ instagram: katychuang.nyc
 
 # Google Analytics (you may want to changes these with yours or even delete :)
 
-# ga_domain: m3xm.github.io
-# ga_tracking_id: 
+ga_domain: katychuang.com/5min/
+ga_tracking_id: UA-2990063-5
 
 # Other (refer to http://jekyllrb.com/docs/home/ for further details on the below)
 
