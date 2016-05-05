@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  hakyll template
-date:   2016-05-02 12:31:51
+date:   2016-05-03 12:31:51
 category: haskell
 ---
 
