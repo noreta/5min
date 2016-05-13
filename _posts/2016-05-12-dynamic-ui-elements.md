@@ -12,7 +12,7 @@ My approach for building this app has been from a designer perspective as you wo
 
 Here is a preview of the UI in action.
 
-![](/assets/img/elDynAttr.gif)
+![](assets/img/elDynAttr.gif)
 
 I mentioned having a designer perspective because the Reflex-FRP and Reflex-Dom has a different way of thinking. When I asked for help with coding my general format follows: (1) explain objective with GUI specs, (2) list docs referenced, (3) brief description of what I understand and attempted to do, and (4) hypothesis on where my knowledge gap lies and/or the confusion on how to put pieces together. Well, the answer in this particular case was that **UX Design has a different way of modeling the GUI than an FRP system**. I write this but don't know how to explain the particulars in technical terms, hopefully the example below illustrates my point.
 
