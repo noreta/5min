@@ -26,7 +26,7 @@ title: Homepage
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.next_page %}
-  <a href="/page/{{paginator.next_page}}" class="older">Older</a>
+  <a href="{{ site.baseurl }}/page/{{paginator.next_page}}" class="older">Older</a>
   {% else %}
   <span class="next">Older</span>
   {% endif %}
@@ -34,7 +34,7 @@ title: Homepage
     {% if paginator.page == 2 %}
     <a href="/" class="newer">Newer</a>
     {% else %}
-    <a href="/page/{{paginator.previous_page}}" class="newer">Newer</a>
+    <a href="{{ site.baseurl }}/page/{{paginator.previous_page}}" class="newer">Newer</a>
     {% endif %}
   {% else %}
   <span class="previous">Newer</span>
