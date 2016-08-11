@@ -14,9 +14,9 @@ baseurl: "/5min"
 exclude: [Gemfile, Gemfile.lock, CNAME, Readme.md]
 
 # A short presentation of yourself. Will show in the sidebar, under your name. Best usage would be between 30 to 50 words.
-author-bio: "Product designer & front end developer. Learning to code in Haskell."
+author-bio: "Product designer & front end developer. Recovering academic. Learning to code in Haskell."
 
-# Social Accounts (mine, as placeholders)
+# Social Accounts
 
 twitter: katychuang
 github: katychuang
