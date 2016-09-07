@@ -10,7 +10,7 @@ There's a way to connect to a server from the commandline without having to reme
 
 {% highlight bash %}
 # contents of $HOME/.ssh/config
-Host 
+Host dev
     HostName example.com
     User dev
 {% endhighlight %}
