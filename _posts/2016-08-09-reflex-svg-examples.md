@@ -110,13 +110,14 @@ elAttr "svg" ("xmlns" =: ns <> "width" =: "200.0" <> "height" =: "200.0"
 Ahh success. Feels good to have figured out a working solution. I'll update the sample `svg.hs` file with the working code :smile:
 
 
-
 [0]: http://stackoverflow.com/questions/38268962/a-single-svg-element-with-reflex-frp/38270441#38270441
 
 --- 
 Links
 
-[Keywords](https://wiki.haskell.org/Keywords)
+* [Reflex-Dom QuickRef](https://github.com/reflex-frp/reflex-dom/blob/develop/Quickref.md)
+* [Reflex QuickRef](https://github.com/reflex-frp/reflex/blob/develop/Quickref.md)
+* [Haskell Keywords](https://wiki.haskell.org/Keywords)
 
 
 [1]: https://www.w3.org/TR/SVG/struct.html#NewDocumentOverview
