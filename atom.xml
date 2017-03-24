@@ -1,27 +1,44 @@
 ---
 ---
 
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ site.name }}</title>
-  <id>{{ site.url }}</id>
-  <link href="{{ site.url }}" />
-  <link href="{{ site.url }}/atom.xml" rel="self" />
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <rights>Copyright 2014, {{ site.author }}</rights>
+
+  <title>{{ site.title | xml_escape }}</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  <link href="{{ site.baseurl }}/" rel="alternate"/>
+  <link href="{{ site.baseurl | append: /atom.xml }}" rel="self"/>
+  <rights>Copyright @ 
+    {{ site.time | date: '%Y' }}. 
+    {{ site.author_name | xml_escape }}</rights>
+  <icon>{{ site.baseurl }}/assets/favicon.png</icon>
+
   <author>
-    <name>{{ site.author }}</name>
+    <name>{{ site.author_name | xml_escape }}</name>
+    <email>{{ site.author_email | xml_escape }}</email>
+    <uri>https://twitter.com/{{ site.twitter_username }}</uri>
   </author>
-  {% for post in site.posts %}
-    <entry>
-      <title>{{ post.title | xml_escape }}</title>
-      <link href="{{ site.url }}{{ post.url }}" />
-      <summary type="html">{{ post.content | xml_escape }}</summary>
-      <id>{{ site.url }}{{ post.url }}</id>
-      <updated>{{ post.date | date_to_xmlschema }}</updated>
-      <author>
-        <name>{{ site.author }}</name>
-      </author>
-    </entry>
+
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.baseurl }}/</id>
+  <generator version="{{ jekyll.version }}">Jekyll</generator>
+
+  {% for post in site.posts limit:40 %}
+
+  {% assign content = post.content | replace: "&#8617;", "&#8617;&#xfe0e;" %}
+  {% assign content = content | replace: "data-lang", "lang" %}
+  {% assign content = content | replace: "<mark>", "<b>" | replace: "</mark>", "</b>" %}
+
+  <entry>
+    <title type="html">{{ post.title | xml_escape }}</title>
+    <id>{{ post.url | prepend: site.baseurl }}</id>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <published>{{ post.path | truncate: 20 | replace: "...", "" | replace: "_posts/", "" }}T10:00:00+02:00</published>
+    <content type="html" xml:lang="en">
+      <![CDATA[{{ content }}]]>
+    </content>
+  </entry>
+
   {% endfor %}
+
 </feed>
