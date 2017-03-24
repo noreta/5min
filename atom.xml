@@ -1,10 +1,14 @@
+---
+layout: null
+---
+
 <?xml version="1.0" encoding="utf-8" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title>{{ site.title | xml_escape }}</title>
   <subtitle>{{ site.description | xml_escape }}</subtitle>
-  <link href="{{ site.baseurl }}" rel="alternate"/>
-  <link href="{{ site.baseurl | append: /atom.xml }}" rel="self"/>
+  <link href="{{ site.baseurl }}/" rel="alternate"/>
+  <link href="{{ site.baseurl }}/atom.xml" rel="self"/>
   <rights>Copyright @ 
     {{ site.time | date: '%Y' }}. 
     {{ site.author_name | xml_escape }}</rights>
@@ -20,7 +24,7 @@
   <id>{{ site.baseurl }}/</id>
   <generator version="{{ jekyll.version }}">Jekyll</generator>
 
-  {% for post in site.posts limit:40 %}
+  {% for post in site.posts limit:10 %}
 
   {% assign content = post.content | replace: "&#8617;", "&#8617;&#xfe0e;" %}
   {% assign content = content | replace: "data-lang", "lang" %}
@@ -32,7 +36,7 @@
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <published>{{ post.path | truncate: 20 | replace: "...", "" | replace: "_posts/", "" }}T10:00:00+02:00</published>
     <content type="html" xml:lang="en">
-      <![CDATA[{{ content }}]]>
+      <![CDATA[{{ post.content | xml_escape }}]]>
     </content>
   </entry>
 
