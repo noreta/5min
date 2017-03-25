@@ -1,40 +1,41 @@
 # Title of your blog; shows in the header
-name: "Macbook & Heels"
+name:               "Macbook & Heels"
 
 # Description of your content (will only be used on Google Search)
-description: "Small bits of learning"
+description:        "bits of learning"
 
 # Your name. Will show in your footer + sidebar
-author_name: "Dr Kat Chuang"
-author_email: hello@katychuang.com
+author_name:        "Dr Kat Chuang"
+author_email:       hello@katychuang.com
 author_gravatar:    0c64f5404b8787a038e8f6fa9522224d # Gravatar md5 hash
 twitter_username:   katychuang
-github_username:    katychuang # GitHub username
+github_username:    katychuang 
 
-url: "http://macbookandheels.com/"
-baseurl: ""
-peramlink: /notes/:title
-timezone: America/New_York #https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+url:                "http://macbookandheels.com/"
+baseurl:            ""
+peramlink:          /notes/:title
+timezone:           America/New_York 
+#https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Exclude these files from your production _site
 exclude: [Gemfile, Gemfile.lock, CNAME, Readme.md]
 
-# A short presentation of yourself. Will show in the sidebar, under your name. Best usage would be between 30 to 50 words.
-author-bio: "Product designer & front end developer. Recovering academic. Learning to code in Haskell."
+author-bio: "floating adrift in a sea of zeroth world problems."
 
 # Social Accounts
 
-twitter: katychuang
-github: katychuang
-dribbble: katychuang
-instagram: katychuang.nyc
-facebook: katychuang.nyc
+twitter:    katychuang
+github:     katychuang
+dribbble:   katychuang
+instagram:  katychuang.nyc
+facebook:   katychuang.nyc
 
 # Google Analytics (you may want to changes these with yours or even delete :)
 
-ga_domain: katychuang.com/5min/
+ga_domain:      katychuang.com/5min/
 ga_tracking_id: UA-2990063-5
 
+# M&H domain
 google_analytics:   UA-78690181-3 # Put your Google Analytics code
 
 # Other (refer to http://jekyllrb.com/docs/home/ for further details on the below)
