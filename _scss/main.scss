@@ -389,6 +389,10 @@ section {
     }
   }
 }
+.pagination {
+  text-align: center;
+}
+
 @keyframes bounce {0% {
     transform: translate3d( 0, -1000px, 0 );
   }

@@ -4,7 +4,7 @@ layout: default
 
 <section>
 
-	{% for post in site.posts %}
+	{% for post in paginator.posts %}
 		{% unless post.next %}
 			<h3>{{ post.date | date: '%Y' }} &#172;</h3>
 		{% else %}
@@ -21,7 +21,7 @@ layout: default
 					<span>{{ post.date | date: "%b %d" }}</span>
 				</div>
 				<div class="title">
-					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                  <a href="{{ site.baseurl}}{{ post.url }}" itemprop="url">{{ post.title }}</a>
 				</div>
 			</li>
 		</ul>
@@ -29,3 +29,25 @@ layout: default
 	{% endfor %}
 
 </section>
+
+{% if paginator.total_pages > 1 %}
+<section>
+<div class="pagination">
+  {% if paginator.next_page %}
+  <a href="{{ site.baseurl }}/page/{{paginator.next_page}}" class="older">Older</a>
+  {% else %}
+  <span class="next">Older</span>
+  {% endif %}
+  &middot;
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+    <a href="/" class="newer">Newer</a>
+    {% else %}
+    <a href="{{ site.baseurl }}/page/{{paginator.previous_page}}" class="newer">Newer</a>
+    {% endif %}
+  {% else %}
+  <span class="previous">Newer</span>
+  {% endif %}
+</div>
+</section>
+{% endif %}
