@@ -11,7 +11,7 @@ author_gravatar:    0c64f5404b8787a038e8f6fa9522224d # Gravatar md5 hash
 twitter_username:   katychuang
 github_username:    katychuang 
 
-url:                "http://macbookandheels.com/"
+url:                "http://macbookandheels.com"
 baseurl:            ""
 peramlink:          /notes/:title
 timezone:           America/New_York 
