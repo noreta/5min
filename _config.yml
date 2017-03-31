@@ -72,6 +72,7 @@ defaults:
       type:         "posts"
     values:
       layout:       "post"
+      share:        facebook # sharing on facebook by default
 
 # SCSS
 
