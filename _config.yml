@@ -30,6 +30,11 @@ dribbble:   katychuang
 instagram:  katychuang.nyc
 facebook:   katychuang.nyc
 
+# social feed settings
+twitter_format: "@title: @url@tags"
+twitter_url_length: 22
+twitter_max_length: 140
+
 # Google Analytics (you may want to changes these with yours or even delete :)
 
 ga_domain:      katychuang.com/5min/
