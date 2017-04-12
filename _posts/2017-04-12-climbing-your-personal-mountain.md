@@ -6,7 +6,9 @@ tags:
 category: 
 ---
 
-Greatness is a gold standard - achieved through a combination dedication, perseverance, consciousness, and more. An outpouring of blood, sweat, and tears is what it costs to get to the next level. There are thoughts from watching a video about preparing for dance competitions. I came across the link earlier tonight and its contents inspired me to think about life paths towards goals. In particular, how exposure to childhood dance training has helped me far beyond the studio and stage.
+Greatness is a gold standard - achieved through a combination dedication, perseverance, consciousness, and more. An outpouring of blood, sweat, and tears is what it costs to get to the next level. 
+
+These are thoughts from watching a video about preparing for dance competitions. I came across the link earlier tonight and its contents inspired me to think about life paths towards goals. In particular, how exposure to childhood dance training has helped me far beyond the studio and stage.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-NhPqimnr3o" frameborder="0" allowfullscreen></iframe>
 
