@@ -1,8 +1,8 @@
 # Title of your blog; shows in the header
-name:               "Macbook & Heels"
+name:               "Macbook and Heels"
 
 # Description of your content (will only be used on Google Search)
-description:        "bits of learning"
+description:        "where I blog about learning, coding, and ux"
 
 # Your name. Will show in your footer + sidebar
 author_name:        "Dr Kat Chuang"
@@ -23,7 +23,7 @@ exclude: [Gemfile, Gemfile.lock, CNAME, Readme.md]
 author-bio: "floating adrift in a sea of zeroth world problems."
 
 # Social Accounts
-
+author:     katychuang
 twitter:    katychuang
 github:     katychuang
 dribbble:   katychuang
