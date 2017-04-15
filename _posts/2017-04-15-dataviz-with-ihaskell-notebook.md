@@ -49,6 +49,8 @@ I really like the workflow of trying a few things and then writing notes in plai
 
 I had the data saved in a JSON file earlier, and read from this file. A library for working with JSON is the [aeson][6] library. I say *working with* because from what I understand `aeson` helps with parsing rather than reading files. Though parsing could arguably be a subset activity of reading... so... idk `¯\_(ツ)_/¯`
 
+## Aeson decoder
+
 Anyway, to include `aeson` capabilities, you need to import the package. Then you need to define the structure of the JSON field names.
 
 ``` haskell
@@ -104,7 +106,7 @@ Loving Haskell for these data processing steps so far. The following steps requi
 
 ## Designing before coding
 
-Next, I needed to figure out how to create the heatmaps. I spent some time asking around on IRC and with NY Haskell's weekend office hours crew about charting libraries. All signs pointed to asking on IRC, where someone suggested the Plots library since it had heatmap. Verified that the heatmap takes a list of lists to make the workflow similar to Python (for closer data triangulation later and comparison of methods). 
+Next, I needed to figure out how to get data from posts into a format for drawing the heatmaps. I asked around on IRC and with NY Haskell's weekend office hours crew about charting libraries. All signs pointed to asking on IRC, where someone suggested the Plots library since it had heatmap. Verified that the heatmap takes a list of lists to make the workflow similar to Python (for closer data triangulation later and comparison of methods). 
 
 Onward I pressed, trying to figure out how to get the list of timestamps into a nested list. The approach from Python, which is like a kindergarten student placing items in a cubby hole, didn't seem to work as well here since I did not know how to work with keeping a data structure for inserting lists at specific indices. This is a point where familiarity with a language lets you have more options - I didn't know how to build the metaphorical shelves for shelving data. What did I do instead?
 
@@ -112,33 +114,33 @@ I white-boarded another idea, which required grouping by week numbers. Cannot co
 
 ![](https://c2.staticflickr.com/4/3928/33669760380_fcaa4ae372_c.jpg)
 
-The main idea is to transform the list of timestamps into a list of tuples. If we look at the data types would be `[timestamps] -> [(weekNumber, weekData)]` or even more abstractly, `[t] -> [(w, [d])]`
+The diagram I drew above shows how the data could look like to transform the list of timestamps into a list of tuples by using a key. If we look at the data types of such a function would be `[timestamps] -> [(weekNumber, weekData)]` or even more abstractly, `[t] -> [(w, [d])]` With actual types it would be `func :: UTCTime -> (Int, [Int])`
 
-There's two parts to each tuple. To get the list of tuples, I wrote two functions to break up the workflow - to make it easier for me as a beginner to retrospectively read my code. 
+There's two parts to each tuple, and a list of tuples. To get the list of tuples, I wrote two functions to break up the workflow, to make it easier for me as a beginner to retrospectively read my code. 
 
-Let's start with the second element, the `[d]` part. I wanted to create a list of element that represent a *marked* week, which takes the day of the week (`Int`) and returns the week.
+Let's start with the second element, the `[d]` part. I wanted to create a list of element that represent a *marked* week, which takes the day of the week `Int` and returns the week `[Int]`.
 
 ```haskell
-mm :: Int -> [Int]
-mm i = xs ++ [norm] ++ ys
+markWeek :: Int -> [Int]
+markWeek dayIdx = xs ++ [norm] ++ ys
     where 
-        xs = replicate (i-1) 0
-        ys = replicate (6-i) 0
+        xs = replicate (dayIdx-1) 0
+        ys = replicate (6-dayIdx) 0
         norm = 1 / 21             -- hardwire the max number for now
 ```
 
 Next I worked on the first element of the tuple, which is the week number `w`. You can get the week number with the time-formatter `formatTime`. 
 
-From the timestamp, I could return the tuple that contains the week number and list of day values using the function `getMM`.
-
 `i` is defined as the week number minus 9. March weeks are weeks 9+ in the year 2017 so I subtracted 9 to get a starting index of 0 for the chart.
 
+I decided to combine that as a where clause when returning the output of the tuples that contains the week number and list of day values using the function `produceTuples`.
+
 ```haskell
-getMM :: UTCTime -> (Int, [Int])
-getMM r = (i, mm y)
+produceTuples :: UTCTime -> (Int, [Int])
+produceTuples timestamp = (w, markWeek dayIndex)
     where
-        y = read (formatTime defaultTimeLocale "%u" r) :: Int
-        i = (read (formatTime defaultTimeLocale "%U" r) :: Int) - 9
+        dayIndex = read (formatTime defaultTimeLocale "%u" timestamp) :: Int
+        w = (read (formatTime defaultTimeLocale "%U" timestamp) :: Int) - 9
 ```
 
 With these two functions, I could transform the list of timestamps into a list of tuples. Will let you [browse the notebook][5] to see how the output looks like. Let's keep moving on, still some work left...
@@ -163,11 +165,10 @@ reduction input = Prelude.map sum . transpose $ (input)
 
 Using all that I've learned so far, I can produce an intermediary list of lists `sample` that is ready to be reduced into `chartData`. 
 
-*Ooo, I squeezed in a [nested list comprehension][10] going on, fancy fancy* :nail_care:
+*Ooo, I squeezed in a [nested list comprehension][10], fancy fancy* :nail_care:
 
 ```haskell
 let sample = sortAndGroup [ getMM x | x <- march]
-
 let chartData = [ [ 1- e | e <- reduction $ snd weekly] | weekly <- sample]
 ```
 
