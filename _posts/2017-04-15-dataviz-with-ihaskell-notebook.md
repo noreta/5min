@@ -6,7 +6,9 @@ tags: haskell, dataviz
 category: tutorial
 ---
 
-Last month in the [first part of the dataviz series][1] post I mentioned working on a Haskell version of the project. It was a lot harder working in Haskell than working in Python - mostly because I'm unfamiliar with the language and its quirks. Installation was also a hurdle to overcome. 
+Last month in the [first part of the dataviz series][1] post I mentioned working on a Haskell version of the project.
+
+It was a lot harder working in Haskell than working in Python - mostly because I'm unfamiliar with the language and its quirks. Installation was also a hurdle to overcome. 
 
 In this tutorial write-up I attempt to sum up important bits from the past 3 weeks and perhaps you will learn from my experience. 
 
