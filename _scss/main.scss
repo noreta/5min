@@ -212,6 +212,15 @@ ol {
     border-radius: 5px;
   }
 }
+
+ul#markdown-toc{
+    margin-top: 0;
+
+    li > ul{
+        margin: 0;
+    }
+}
+
 sup {
   vertical-align: top;
   position: relative;
@@ -282,6 +291,9 @@ article {
     background: linear-gradient(to right,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
     height: 1px;
     margin: 2em 0;
+    + p{
+        text-transform: italic;
+    }
   }
   .center {
     text-align: center;
