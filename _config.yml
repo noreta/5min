@@ -1,5 +1,5 @@
 # Title of your blog; shows in the header
-name:               "Macbook and Heels"
+name:               "Gula Jawa"
 
 # Description of your content (will only be used on Google Search)
 description:        "where I blog about learning, coding, and ux"
@@ -7,13 +7,13 @@ description:        "where I blog about learning, coding, and ux"
 # Your name. Will show in your footer + sidebar
 author_name:        "Dr Kat Chuang"
 author_email:       hello@katychuang.com
-author_gravatar:    0c64f5404b8787a038e8f6fa9522224d # Gravatar md5 hash
-twitter_username:   katychuang
-github_username:    katychuang 
+author_gravatar:    281f2d38dff2938dd450c08903b1e290 # Gravatar md5 hash
+twitter_username:   norsasono
+github_username:    norsasono 
 
 url:                "http://macbookandheels.com"
 baseurl:            ""
-peramlink:          /notes/:title
+peramlink:          /:year/:month/:day/:title
 timezone:           America/New_York 
 #https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
@@ -38,10 +38,10 @@ twitter_max_length: 140
 # Google Analytics (you may want to changes these with yours or even delete :)
 
 ga_domain:      katychuang.com/5min/
-ga_tracking_id: UA-2990063-5
+ga_tracking_id: 
 
 # M&H domain
-google_analytics:   UA-78690181-3 # Put your Google Analytics code
+google_analytics:    # Put your Google Analytics code
 
 # Other (refer to http://jekyllrb.com/docs/home/ for further details on the below)
 
